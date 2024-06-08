@@ -1,0 +1,62 @@
+.container {
+    max-width: 120rem; // if view port is less, we occupy 100% of the available space
+    min-height: 50rem; // for testing purposesS
+    margin: 8rem auto; // center container in the parent element(body)
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+}
+
+.header {
+    height: 7rem;
+    font-size: 1.4rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; // setting width of the nav-bar to 18%. I don't want it to neither grow or shrink
+
+    display: flex; // set this flex item's display to flex
+    flex-direction: column; // change the main axis to column
+    justify-content: space-between;
+}
+
+.hotel-view {
+    background-color: #fff;
+
+    // testing purposes, to be removed
+    // height: 80rem;
+
+    flex: 1; // grow over all the available space. Technically occupy's 82%
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%; // Occur 60% of the parent width, don't grow nor shrink
+    margin-right: 4.5rem;
+}
+
+.user-reviews {
+    flex: 1; // Grow to occur remaining space
+    display: flex;
+    flex-direction: column; // main-axis is now in the vertical direction
+    align-items: center; // Don't stretch the items in the cross-axis (horizontal diretion now)
+}
