@@ -18,6 +18,12 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -147,12 +153,22 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin-top: 0;
+    }
+
     // list item
     &__item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1; // Let all list items occupy the same space
+            margin-bottom: 0;
         }
     }
 
@@ -201,6 +217,16 @@
         z-index: 10; // By default the before pseudo element is on top of the anchor tag 
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }
     }
 
     // svg within the anchor tag
@@ -209,6 +235,13 @@
         width: 1.75rem;
         margin-right: 2rem;
         fill: currentColor; // pick the color from the parent (link)
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: .7rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }
 
@@ -219,6 +252,10 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 ///////////////////////////////////////////////////
@@ -239,12 +276,18 @@
     display: flex;
     align-items: center; // align items along the cross axis
     border-bottom: var(--line);
+
     &__heading {
         font-size: 2.25rem;
         font-weight: 300; // small font weight
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -280,16 +323,28 @@
         justify-content: center;
         align-items: center;
         padding: 0 2.5rem;
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 300;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
       font-size: .8rem;  
       text-transform: uppercase;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: .5rem;
+    }
     }
 }
 
@@ -401,7 +456,7 @@
     }
 
     &__friends {
-
+        display: flex;
     }
     
     &__photo {
@@ -412,7 +467,8 @@
         border: 3px solid #fff;
 
         &:not(:last-child) {
-            margin-right: -1.5rem; // Allows photos to overlap on each other
+            margin-right: -2.1rem; // Allows photos to overlap on each other
+
         }
     }
 }
@@ -426,6 +482,12 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
     &__text {
         margin-bottom: 2rem;
         position: relative;
@@ -484,6 +546,10 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;
